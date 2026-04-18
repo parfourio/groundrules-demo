@@ -625,6 +625,147 @@
     .footer-bottom p { font-size: 0.73rem; color: rgba(255,255,255,0.22); }
     .footer-bottom a { color: rgba(255,255,255,0.3); text-decoration: none; }
 
+    /* ── BOOK CALLOUT ── */
+    .book-callout {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(200,168,75,0.07); border: 1px solid rgba(200,168,75,0.25);
+      border-radius: var(--radius); padding: 18px 22px; margin-top: 24px;
+    }
+    .book-icon { font-size: 2rem; flex-shrink: 0; }
+    .book-callout-text { }
+    .book-callout-label {
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+    .book-callout-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem; font-weight: 800; color: var(--white);
+      text-transform: uppercase; letter-spacing: 0.03em;
+    }
+
+    /* ── PRICING ── */
+    .pricing-section { padding: 100px 48px; background: var(--black); }
+    .pricing-inner { max-width: 1100px; margin: 0 auto; }
+    .pricing-header { margin-bottom: 56px; max-width: 640px; }
+    .pricing-header p {
+      font-size: 1rem; color: rgba(255,255,255,0.55);
+      line-height: 1.75; margin-top: 18px;
+    }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;
+    }
+    .pricing-card {
+      background: var(--dark-2); border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 36px 30px; display: flex; flex-direction: column;
+      transition: transform 0.25s, border-color 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .pricing-card:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.4); }
+    .pricing-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(160deg, var(--dark-2) 60%, rgba(200,168,75,0.06) 100%);
+    }
+    .pricing-best {
+      position: absolute; top: 18px; right: -28px;
+      background: var(--gold); color: var(--black);
+      font-size: 0.58rem; font-weight: 900; letter-spacing: 0.14em;
+      text-transform: uppercase; padding: 5px 40px;
+      transform: rotate(45deg); transform-origin: right center;
+    }
+    .pricing-plan-tag {
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--blue-bright); margin-bottom: 14px;
+    }
+    .pricing-card.featured .pricing-plan-tag { color: var(--gold); }
+    .pricing-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+      color: var(--white); margin-bottom: 6px; line-height: 1.1;
+    }
+    .pricing-billing {
+      font-size: 0.72rem; color: var(--gray); margin-bottom: 24px;
+    }
+    .pricing-amount {
+      display: flex; align-items: flex-start; gap: 4px;
+      margin-bottom: 28px; line-height: 1;
+    }
+    .pricing-dollar {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 700; color: var(--gray-light); margin-top: 8px;
+    }
+    .pricing-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 4rem; font-weight: 900; color: var(--white); line-height: 1;
+    }
+    .pricing-card.featured .pricing-num { color: var(--gold); }
+    .pricing-period {
+      font-size: 0.8rem; color: var(--gray); align-self: flex-end; margin-bottom: 8px;
+    }
+    .pricing-divider {
+      height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 24px;
+    }
+    .pricing-perks { list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .pricing-perks li {
+      font-size: 0.85rem; color: rgba(255,255,255,0.6);
+      line-height: 1.5; display: flex; gap: 10px; align-items: flex-start;
+    }
+    .pricing-perks li::before {
+      content: '✓'; color: var(--blue-bright); font-weight: 800;
+      font-size: 0.8rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .pricing-card.featured .pricing-perks li::before { color: var(--gold); }
+    .pricing-cta {
+      display: block; text-align: center; margin-top: 28px;
+      background: var(--blue); color: var(--white);
+      padding: 13px 20px; border-radius: var(--radius);
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none; transition: background 0.2s;
+    }
+    .pricing-cta:hover { background: var(--blue-light); }
+    .pricing-card.featured .pricing-cta { background: var(--gold); color: var(--black); }
+    .pricing-card.featured .pricing-cta:hover { background: var(--gold-light); }
+
+    .discounts-box {
+      background: var(--dark-2); border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 36px 40px; margin-top: 40px;
+    }
+    .discounts-box h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .discounts-box > p {
+      font-size: 0.88rem; color: rgba(255,255,255,0.45); margin-bottom: 28px;
+    }
+    .discounts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .discount-group h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; text-transform: uppercase;
+      color: var(--blue-bright); letter-spacing: 0.08em; margin-bottom: 12px;
+    }
+    .discount-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .discount-list li {
+      font-size: 0.84rem; color: rgba(255,255,255,0.55);
+      display: flex; gap: 10px; align-items: flex-start; line-height: 1.4;
+    }
+    .discount-list li .disc-badge {
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; background: rgba(37,99,235,0.12);
+      color: var(--blue-bright); border: 1px solid rgba(37,99,235,0.2);
+      padding: 3px 8px; border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+    }
+    .pricing-footer-cta {
+      margin-top: 40px; padding: 32px; background: var(--dark-2);
+      border-radius: 12px; border: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+    }
+    .pricing-footer-cta p {
+      font-size: 0.92rem; color: rgba(255,255,255,0.55); margin-bottom: 18px; line-height: 1.7;
+    }
+    .pricing-footer-cta .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
     /* ── SCROLL REVEAL ── */
     [data-reveal] {
       opacity: 0; transform: translateY(32px);
@@ -640,6 +781,8 @@
     @media (max-width: 1024px) {
       .about-inner, .defy-inner, .curriculum-layout, .cta-inner { grid-template-columns: 1fr; gap: 48px; }
       .programs-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .discounts-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
@@ -649,7 +792,11 @@
       .hero h1 { font-size: 3.8rem; }
       .hero h1 em { font-size: 2.8rem; }
       .about-section, .programs-section, .defy-section,
-      .curriculum-section, .schedule-section, .classes-section, .cta-section { padding: 64px 24px; }
+      .curriculum-section, .schedule-section, .classes-section,
+      .pricing-section, .cta-section { padding: 64px 24px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .discounts-box { padding: 28px 24px; }
+      .discounts-grid { grid-template-columns: 1fr; }
       .stats-bar { padding: 0 20px; }
       .stats-inner { flex-wrap: wrap; }
       .stat-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
@@ -683,6 +830,7 @@
     <li><a href="#">Home</a></li>
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#classes">Classes</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#veterans">We Defy</a></li>
     <li><a href="#trial" class="nav-cta">Free Trial Week</a></li>
@@ -695,6 +843,7 @@
   <a href="#">Home</a>
   <a href="#schedule">Schedule</a>
   <a href="#classes">Classes</a>
+  <a href="#pricing">Pricing</a>
   <a href="#about">About</a>
   <a href="#veterans">We Defy</a>
   <a href="#trial">Free Trial Week</a>
@@ -755,12 +904,19 @@
     <div class="about-text">
       <div class="section-tag">The Founder</div>
       <h2 class="section-title">PROFESSOR<br><span>RUSSELL</span> JENSEN</h2>
-      <p>Russell Jensen is not a typical gym owner. He holds a PhD in Physical Chemistry from MIT and spent 20 years teaching science at universities around the world before channeling that same methodical, curriculum-driven approach into Brazilian Jiu-Jitsu.</p>
-      <p>The result is a gym where nothing is left to chance. Every class has a structure. Every technique has a progression. Every student - whether they're 5 years old or 55, a complete beginner or a seasoned competitor - gets instruction designed to actually stick.</p>
-      <p>Ground Rules Academy is the highest-rated BJJ school in the Tri-Valley not because of marketing, but because of what happens on the mat every single day.</p>
+      <p>Ground Rules Academy provides top-quality Jiu-Jitsu instruction as a vehicle for developing fitness, resilience, and self-defense skills for ages 5 and up. The beginner-friendly training environment contributes to improved physical and mental health, relationships, performance at school or work, and overall quality of life.</p>
+      <p>Dr. Jensen earned his PhD under a Nobel Laureate at MIT and has spent 20 years teaching around the globe — currently as a Professor of Chemistry at Las Positas College. He understands the learning process. He's a master of distilling challenging topics into relatable ideas, and he brings that same gift to the mat every single day.</p>
+      <p>He can show you the way — but it's up to you to do the work.</p>
       <div class="russ-quote">
         "Jiu-jitsu is the most effective vehicle I've found for building grit, humility, and self-discipline in people of all ages. Our job is to make sure the teaching is good enough that anyone can access it."
-        <cite>- Russell Jensen, Founder & Head Professor</cite>
+        <cite>- Russell Jensen, PhD · Founder & Head Professor</cite>
+      </div>
+      <div class="book-callout">
+        <div class="book-icon">📖</div>
+        <div class="book-callout-text">
+          <div class="book-callout-label">Published Author</div>
+          <div class="book-callout-title">Ground Rules: Simple Physics for the Grappling Arts</div>
+        </div>
       </div>
     </div>
     <div class="russ-card">
@@ -768,14 +924,16 @@
         <img src="https://images.squarespace-cdn.com/content/v1/65cd6974c096ae5d35a4767d/a4653887-a830-446b-a53c-b0071aa8dbd6/IMG_3776.jpeg?format=2500w" alt="Russell Jensen - Ground Rules Academy" />
       </div>
       <div class="russ-card-info">
-        <div class="russ-name">Russell Jensen</div>
-        <div class="russ-title">Founder · Head Professor · BJJ Black Belt</div>
+        <div class="russ-name">Russell Jensen, PhD</div>
+        <div class="russ-title">Founder · Head Professor · BJJ Black Belt (2024)</div>
         <div class="russ-credentials">
-          <span class="cred-badge gold">PhD - MIT</span>
-          <span class="cred-badge gold">Physical Chemistry</span>
+          <span class="cred-badge gold">PhD · MIT</span>
+          <span class="cred-badge gold">Nobel Lab Alum</span>
+          <span class="cred-badge gold">Published Author</span>
           <span class="cred-badge">BJJ Black Belt</span>
           <span class="cred-badge">20 Yrs Teaching</span>
-          <span class="cred-badge">We Defy Certified</span>
+          <span class="cred-badge">Las Positas College</span>
+          <span class="cred-badge">We Defy Official</span>
           <span class="cred-badge">Judo &amp; Wrestling</span>
         </div>
       </div>
@@ -1118,6 +1276,114 @@
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="pricing-section" id="pricing" data-reveal>
+  <div class="pricing-inner">
+    <div class="pricing-header">
+      <div class="section-tag">Invest in Yourself</div>
+      <h2 class="section-title">SIMPLE, <span>HONEST</span> PRICING</h2>
+      <p>Elite-level instruction in a supportive, focused environment. Our programs emphasize technical precision, practical self-defense, and long-term skill development — so you get exceptional results for your investment.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Monthly -->
+      <div class="pricing-card">
+        <div class="pricing-plan-tag">Monthly Recurring</div>
+        <div class="pricing-name">Unlimited Membership</div>
+        <div class="pricing-billing">Billed monthly · cancel anytime</div>
+        <div class="pricing-amount">
+          <span class="pricing-dollar">$</span>
+          <span class="pricing-num">175</span>
+          <span class="pricing-period">/ month</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-perks">
+          <li>Access to all regular classes — fundamentals, advanced, competition-focused</li>
+          <li>Unlimited attendance — train as often as your schedule allows</li>
+          <li>Open mat sessions included</li>
+          <li>For serious students committed to consistent progress</li>
+        </ul>
+        <a href="#trial" class="pricing-cta">Start Free Trial</a>
+      </div>
+
+      <!-- Annual - BEST VALUE -->
+      <div class="pricing-card featured">
+        <div class="pricing-best">Best Value</div>
+        <div class="pricing-plan-tag">Annual Recurring</div>
+        <div class="pricing-name">Unlimited Membership</div>
+        <div class="pricing-billing">Billed annually · ~$137/month</div>
+        <div class="pricing-amount">
+          <span class="pricing-dollar">$</span>
+          <span class="pricing-num">1650</span>
+          <span class="pricing-period">/ year</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-perks">
+          <li>Save over $450 vs. monthly — commit to real transformation</li>
+          <li>Access to all regular classes — fundamentals, advanced, competition-focused</li>
+          <li>Unlimited attendance — train as often as your schedule allows</li>
+          <li>Open mat sessions included</li>
+        </ul>
+        <a href="#trial" class="pricing-cta">Start Free Trial</a>
+      </div>
+
+      <!-- Women-Only -->
+      <div class="pricing-card">
+        <div class="pricing-plan-tag">Women's Program · Monthly</div>
+        <div class="pricing-name">Women-Only Program</div>
+        <div class="pricing-billing">Billed monthly · cancel anytime</div>
+        <div class="pricing-amount">
+          <span class="pricing-dollar">$</span>
+          <span class="pricing-num">75</span>
+          <span class="pricing-period">/ month</span>
+        </div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-perks">
+          <li>One women-only class per week + full open mat access</li>
+          <li>A safe, empowering space to build confidence and technique</li>
+          <li>Perfect for beginners or those preferring female-only training partners</li>
+        </ul>
+        <a href="#trial" class="pricing-cta">Start Free Trial</a>
+      </div>
+
+    </div>
+
+    <!-- Discounts -->
+    <div class="discounts-box">
+      <h3>Discounts &amp; Promotions</h3>
+      <p>We value service, education, and family commitment — here are ways to make high-quality training even more accessible.</p>
+      <div class="discounts-grid">
+        <div class="discount-group">
+          <h4>10% Off Unlimited Memberships</h4>
+          <ul class="discount-list">
+            <li><span class="disc-badge">Students</span> College students with valid student ID</li>
+            <li><span class="disc-badge">First Responders</span> Police, fire, and EMS</li>
+            <li><span class="disc-badge">Military</span> Active-duty military &amp; veterans</li>
+          </ul>
+        </div>
+        <div class="discount-group">
+          <h4>Family Membership Discounts</h4>
+          <ul class="discount-list">
+            <li><span class="disc-badge">1st Member</span> Full price</li>
+            <li><span class="disc-badge">2nd Member</span> 15% off</li>
+            <li><span class="disc-badge">3rd+ Members</span> 25% off each</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-footer-cta">
+      <p>Training at this level builds more than skill — it builds resilience, strategy, and community. These are unbeatable rates for the caliber of coaching and instruction we provide.</p>
+      <div class="btn-row">
+        <a href="#trial" class="btn-blue">Book Your Free Trial Week</a>
+        <a href="#schedule" class="btn-ghost">View Full Schedule</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- FREE WEEK CTA -->
 <section class="cta-section" id="trial" data-reveal>
   <div class="cta-inner">
@@ -1231,11 +1497,11 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Schedule</h4>
+      <h4>Learn More</h4>
       <ul>
         <li><a href="#schedule">Full Schedule</a></li>
         <li><a href="#classes">Class Descriptions</a></li>
-        <li><a href="#schedule">Mon / Wed / Fri</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#trial">Free Trial Week</a></li>
       </ul>
     </div>
