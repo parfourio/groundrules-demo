@@ -98,7 +98,7 @@
     /* ── HERO ── */
     .hero {
       position: relative; min-height: 100vh;
-      background: url('https://images.unsplash.com/photo-1555597673-b21d5c935865?w=1800&q=80') center 35% / cover no-repeat;
+      background: url('https://images.squarespace-cdn.com/content/v1/65cd6974c096ae5d35a4767d/3e956acf-1c59-4617-83bd-708fc9b0e15c/Cover+Photo.png') center 40% / cover no-repeat;
       display: flex; align-items: center;
     }
     .hero-overlay {
@@ -397,38 +397,107 @@
 
     /* ── SCHEDULE ── */
     .schedule-section { padding: 100px 48px; background: var(--black); }
-    .schedule-inner { max-width: 1100px; margin: 0 auto; }
-    .schedule-grid {
+    .schedule-inner { max-width: 1200px; margin: 0 auto; }
+    .schedule-table-wrap {
+      overflow-x: auto; margin-top: 52px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .schedule-table {
+      width: 100%; border-collapse: collapse;
+      font-family: 'Barlow', sans-serif; min-width: 780px;
+    }
+    .schedule-table th {
+      padding: 18px 16px; text-align: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 900; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--white);
+      background: var(--dark-3);
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .schedule-table th:last-child { border-right: none; }
+    .schedule-table th .gi-label {
+      display: block; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.14em; margin-top: 4px;
+    }
+    .gi { color: var(--blue-bright); }
+    .nogi { color: var(--gold); }
+    .gigi { color: var(--gray-light); }
+    .schedule-table td {
+      padding: 14px 16px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      background: var(--dark-2); vertical-align: middle;
+    }
+    .schedule-table td:first-child {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem; font-weight: 800; color: var(--blue-bright);
+      background: var(--dark-3); text-align: right; white-space: nowrap;
+      padding-right: 20px; border-right: 2px solid rgba(255,255,255,0.08);
+    }
+    .schedule-table td:last-child { border-right: none; }
+    .schedule-table tr:last-child td { border-bottom: none; }
+    .sched-class {
+      font-size: 0.82rem; font-weight: 700; color: var(--white);
+      display: block; line-height: 1.3;
+    }
+    .sched-dur {
+      font-size: 0.68rem; color: rgba(255,255,255,0.38);
+      margin-top: 3px; display: block;
+    }
+    .sched-kids { color: #4ade80; }
+    .sched-women { color: #f472b6; }
+    .sched-comp { color: var(--gold); }
+    .sched-open { color: var(--blue-bright); }
+    .sched-empty { color: rgba(255,255,255,0.1); font-size: 0.75rem; }
+
+    /* ── CLASS DESCRIPTIONS ── */
+    .classes-section { padding: 100px 48px; background: var(--dark); }
+    .classes-inner { max-width: 1100px; margin: 0 auto; }
+    .classes-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px;
     }
-    .schedule-card {
+    .class-card {
       background: var(--dark-2); border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.07); overflow: hidden;
-      transition: border-color 0.2s;
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px; display: flex; flex-direction: column;
+      transition: border-color 0.25s, transform 0.25s;
     }
-    .schedule-card:hover { border-color: rgba(37,99,235,0.4); }
-    .schedule-card-header {
-      background: var(--dark-3); padding: 20px 24px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+    .class-card:hover { border-color: rgba(37,99,235,0.4); transform: translateY(-3px); }
+    .class-card.kids { border-top: 3px solid #4ade80; }
+    .class-card.women { border-top: 3px solid #f472b6; }
+    .class-card.comp { border-top: 3px solid var(--gold); }
+    .class-card.open { border-top: 3px solid var(--blue-bright); }
+    .class-card.fund { border-top: 3px solid var(--blue); }
+    .class-tag {
+      font-size: 0.6rem; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 4px;
+      display: inline-block; margin-bottom: 14px; width: fit-content;
     }
-    .schedule-days {
+    .class-tag.gi { background: rgba(79,134,247,0.12); color: var(--blue-bright); }
+    .class-tag.nogi-tag { background: rgba(200,168,75,0.12); color: var(--gold); }
+    .class-tag.kids-tag { background: rgba(74,222,128,0.12); color: #4ade80; }
+    .class-tag.women-tag { background: rgba(244,114,182,0.12); color: #f472b6; }
+    .class-tag.all-tag { background: rgba(255,255,255,0.06); color: var(--gray-light); }
+    .class-name {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.3rem; font-weight: 900; text-transform: uppercase;
-      color: var(--white); letter-spacing: 0.04em;
+      font-size: 1.45rem; font-weight: 900; text-transform: uppercase;
+      color: var(--white); margin-bottom: 10px; line-height: 1.1;
     }
-    .schedule-body { padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; }
-    .schedule-time {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    .class-desc {
+      font-size: 0.87rem; color: rgba(255,255,255,0.5);
+      line-height: 1.75; flex: 1; margin-bottom: 18px;
     }
-    .schedule-time:last-child { border-bottom: none; }
-    .schedule-class {
-      font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.7);
+    .class-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .class-bullets li {
+      font-size: 0.78rem; color: rgba(255,255,255,0.45);
+      line-height: 1.5; padding-left: 14px; position: relative;
     }
-    .schedule-hour {
-      font-size: 0.78rem; font-weight: 700; color: var(--blue-bright);
-      letter-spacing: 0.04em;
+    .class-bullets li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--blue-bright); font-size: 0.7rem;
     }
+    .class-bullets li strong { color: rgba(255,255,255,0.7); font-weight: 600; }
 
     /* ── FREE WEEK CTA ── */
     .cta-section { padding: 100px 48px; background: var(--dark-2); }
@@ -580,18 +649,22 @@
       .hero h1 { font-size: 3.8rem; }
       .hero h1 em { font-size: 2.8rem; }
       .about-section, .programs-section, .defy-section,
-      .curriculum-section, .schedule-section, .cta-section { padding: 64px 24px; }
+      .curriculum-section, .schedule-section, .classes-section, .cta-section { padding: 64px 24px; }
       .stats-bar { padding: 0 20px; }
       .stats-inner { flex-wrap: wrap; }
       .stat-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
       .programs-grid { grid-template-columns: 1fr; }
-      .schedule-grid { grid-template-columns: 1fr; }
+      .classes-grid { grid-template-columns: 1fr; }
       .defy-stats { grid-template-columns: 1fr 1fr; }
       footer { padding: 40px 24px 24px; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
+    @media (max-width: 1024px) {
+      .classes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 520px) {
       .footer-inner { grid-template-columns: 1fr; }
+      .classes-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -607,22 +680,24 @@
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#programs">Programs</a></li>
-    <li><a href="#veterans">We Defy</a></li>
+    <li><a href="#">Home</a></li>
     <li><a href="#schedule">Schedule</a></li>
-    <li><a href="#trial" class="nav-cta">Free Week Trial</a></li>
+    <li><a href="#classes">Classes</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#veterans">We Defy</a></li>
+    <li><a href="#trial" class="nav-cta">Free Trial Week</a></li>
   </ul>
   <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu">
-  <a href="#about">About</a>
-  <a href="#programs">Programs</a>
-  <a href="#veterans">We Defy</a>
+  <a href="#">Home</a>
   <a href="#schedule">Schedule</a>
-  <a href="#trial">Free Week Trial</a>
+  <a href="#classes">Classes</a>
+  <a href="#about">About</a>
+  <a href="#veterans">We Defy</a>
+  <a href="#trial">Free Trial Week</a>
 </div>
 
 <!-- HERO -->
@@ -690,7 +765,7 @@
     </div>
     <div class="russ-card">
       <div class="russ-card-img">
-        <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=600&q=80" alt="Russell Jensen - Ground Rules Academy" />
+        <img src="https://images.squarespace-cdn.com/content/v1/65cd6974c096ae5d35a4767d/a4653887-a830-446b-a53c-b0071aa8dbd6/IMG_3776.jpeg?format=2500w" alt="Russell Jensen - Ground Rules Academy" />
       </div>
       <div class="russ-card-info">
         <div class="russ-name">Russell Jensen</div>
@@ -720,7 +795,7 @@
 
       <div class="program-card featured">
         <div class="program-img">
-          <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=700&q=80" alt="Adult BJJ" />
+          <img src="https://images.squarespace-cdn.com/content/v1/65cd6974c096ae5d35a4767d/3e956acf-1c59-4617-83bd-708fc9b0e15c/Cover+Photo.png" alt="Adult BJJ" />
           <div class="program-img-overlay"></div>
           <div class="program-tag">Foundation</div>
         </div>
@@ -881,54 +956,162 @@
   <div class="schedule-inner">
     <div class="section-tag">Class Schedule</div>
     <h2 class="section-title">FIND YOUR <span>TIME</span></h2>
-    <div class="schedule-grid">
+    <div class="schedule-table-wrap">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th style="text-align:right;padding-right:20px;">Time</th>
+            <th>Monday<span class="gi-label gi">Gi</span></th>
+            <th>Tuesday<span class="gi-label nogi">No Gi</span></th>
+            <th>Wednesday<span class="gi-label gi">Gi</span></th>
+            <th>Thursday<span class="gi-label nogi">No Gi</span></th>
+            <th>Friday<span class="gi-label gi">Gi</span></th>
+            <th>Saturday<span class="gi-label gigi">Gi / No Gi</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9:35 AM</td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class sched-comp">Competition Class</span><span class="sched-dur">80 mins</span></td>
+          </tr>
+          <tr>
+            <td>11:05 AM</td>
+            <td><span class="sched-class">Fundamentals</span><span class="sched-dur">80 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class">Fundamentals</span><span class="sched-dur">80 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class sched-open">Open Mat</span></td>
+          </tr>
+          <tr>
+            <td>4:05 PM</td>
+            <td><span class="sched-class sched-kids">BJJ Sprouts</span><span class="sched-dur">Ages 5–7 · 50 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class sched-kids">BJJ Sprouts</span><span class="sched-dur">Ages 5–7 · 50 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class sched-kids">BJJ Sprouts</span><span class="sched-dur">Ages 5–7 · 50 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+          </tr>
+          <tr>
+            <td>5:05 PM</td>
+            <td><span class="sched-class sched-kids">BJJ Buds</span><span class="sched-dur">Ages 8–13 · 50 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class sched-kids">BJJ Buds</span><span class="sched-dur">Ages 8–13 · 50 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+            <td><span class="sched-class sched-kids">BJJ Buds</span><span class="sched-dur">Ages 8–13 · 50 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+          </tr>
+          <tr>
+            <td>6:05 PM</td>
+            <td><span class="sched-class">Fundamentals</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class">Fundamentals</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class">Fundamentals</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class">Fundamentals</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class">Advanced</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-empty">—</span></td>
+          </tr>
+          <tr>
+            <td>7:05 PM</td>
+            <td><span class="sched-class">Advanced</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class">Advanced</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class sched-women">Women-Only Fundamentals</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class">Advanced</span><span class="sched-dur">55 mins</span></td>
+            <td><span class="sched-class sched-open">Open Mat</span></td>
+            <td><span class="sched-empty">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-      <div class="schedule-card">
-        <div class="schedule-card-header">
-          <div class="schedule-days">Monday · Wednesday · Friday</div>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-time">
-            <span class="schedule-class">Open Mat / Adult BJJ</span>
-            <span class="schedule-hour">11:00am - 1:00pm</span>
-          </div>
-          <div class="schedule-time">
-            <span class="schedule-class">Kids BJJ</span>
-            <span class="schedule-hour">4:00 - 5:00pm</span>
-          </div>
-          <div class="schedule-time">
-            <span class="schedule-class">Adult BJJ - All Levels</span>
-            <span class="schedule-hour">5:00 - 6:30pm</span>
-          </div>
-          <div class="schedule-time">
-            <span class="schedule-class">Judo &amp; Wrestling</span>
-            <span class="schedule-hour">6:30 - 8:00pm</span>
-          </div>
-        </div>
+<!-- CLASS DESCRIPTIONS -->
+<section class="classes-section" id="classes" data-reveal>
+  <div class="classes-inner">
+    <div class="section-tag">Class Descriptions</div>
+    <h2 class="section-title">EVERY CLASS, <span>EXPLAINED</span></h2>
+    <div class="classes-grid">
+
+      <div class="class-card kids">
+        <span class="class-tag kids-tag">Ages 5–7</span>
+        <div class="class-name">BJJ Sprouts</div>
+        <div class="class-desc">Spark a lifelong love for jiu-jitsu with our littlest Sprouts! This class turns playtime into powerful foundations, blending fun with essential skills to boost coordination and self-assurance.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> Basic movements, coordination, and skill development</li>
+          <li><strong>Builds:</strong> Physical strength, confidence, and a sense of achievement</li>
+          <li><strong>Activities:</strong> Basic movement drills, grappling games and supervised light sparring for safe, joyful exploration</li>
+        </ul>
       </div>
 
-      <div class="schedule-card">
-        <div class="schedule-card-header">
-          <div class="schedule-days">Tuesday · Thursday</div>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-time">
-            <span class="schedule-class">Adult BJJ - All Levels</span>
-            <span class="schedule-hour">6:30 - 8:00pm</span>
-          </div>
-        </div>
+      <div class="class-card kids">
+        <span class="class-tag kids-tag">Ages 8–13</span>
+        <div class="class-name">BJJ Buds</div>
+        <div class="class-desc">Elevate our budding grapplers with deeper dives into jiu-jitsu essentials. This program fosters skill development, strategic thinking, and resilience through engaging, high-energy sessions.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> Basic principles, techniques, movement patterns, and strategies with age-appropriate rigor</li>
+          <li><strong>Builds:</strong> Coordination, strength, confidence, and grappling skills</li>
+          <li><strong>Activities:</strong> Movement and technical drills, grappling games, and supervised sparring for fun, self-defense, and competition</li>
+        </ul>
       </div>
 
-      <div class="schedule-card">
-        <div class="schedule-card-header">
-          <div class="schedule-days">Saturday</div>
-        </div>
-        <div class="schedule-body">
-          <div class="schedule-time">
-            <span class="schedule-class">Adult BJJ / Open Mat</span>
-            <span class="schedule-hour">11:00am - 1:00pm</span>
-          </div>
-        </div>
+      <div class="class-card fund">
+        <span class="class-tag gi">Gi · All Levels</span>
+        <div class="class-name">Fundamentals</div>
+        <div class="class-desc">Master the building blocks of Brazilian Jiu-Jitsu with a streamlined curriculum crafted by experts. Efficient, effective training that gets you rolling from day one — suitable for teens and adults of all levels.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> The effective application of grappling skills, principles, and techniques</li>
+          <li><strong>Training Style:</strong> General and technical warmups, classic drilling, live/situational reps</li>
+          <li><strong>Progression:</strong> Culminates in live sparring to solidify skills</li>
+        </ul>
+      </div>
+
+      <div class="class-card women">
+        <span class="class-tag women-tag">Women Only</span>
+        <div class="class-name">Women-Only Fundamentals</div>
+        <div class="class-desc">Empower yourself in a supportive environment dedicated to growth and confidence on the mats. Learn practical self-defense, refine techniques, and train alongside fellow women in a comfortable setting.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> Practical BJJ techniques with emphasis on self-defense and sport jiu-jitsu application</li>
+          <li><strong>For:</strong> Women of all experience levels — beginners welcome and encouraged</li>
+          <li><strong>Benefits:</strong> Increased confidence, strength, stress relief, and a strong sense of community</li>
+        </ul>
+      </div>
+
+      <div class="class-card">
+        <span class="class-tag all-tag">All Levels</span>
+        <div class="class-name">Advanced Class</div>
+        <div class="class-desc">Train like a black belt in an environment built for refinement and innovation. Here, we dissect challenges, build personalized systems, and roll with purpose — your input shapes the session.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> Development and optimization of cohesive systems</li>
+          <li><strong>Training Style:</strong> Intensive situational drilling and sparring</li>
+          <li><strong>Community:</strong> Open Q&amp;A — suggest topics, collaborate, and troubleshoot with fellow grapplers</li>
+        </ul>
+      </div>
+
+      <div class="class-card comp">
+        <span class="class-tag nogi-tag">Competition</span>
+        <div class="class-name">Competition Class</div>
+        <div class="class-desc">Gear up for the spotlight with elite training that hones split-second decisions and instinctive reactions. Open to all ages ready to compete — consult an instructor to confirm your fit.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> Resiliency, grit, decision-making, and natural reflexes under pressure</li>
+          <li><strong>Training Style:</strong> Rigorous situational drilling of systems and sequences. Competition intensity sparring</li>
+          <li><strong>For:</strong> Ambitious athletes striving for the podium and a championship mindset</li>
+        </ul>
+      </div>
+
+      <div class="class-card open" style="grid-column: span 1;">
+        <span class="class-tag gi">Gi / No Gi</span>
+        <div class="class-name">Open Mat</div>
+        <div class="class-desc">The ultimate free-flow space to experiment, connect, and evolve. No agenda, just mats, partners, and pure jiu-jitsu — perfect for sharpening what you've learned or discovering something new.</div>
+        <ul class="class-bullets">
+          <li><strong>Core Focus:</strong> Self-directed practice and collaborative rolling</li>
+          <li><strong>Training Style:</strong> Grab a partner and dive in — drill, spar, or flow as you like</li>
+          <li><strong>Benefits:</strong> Builds adaptability, friendships, and that intuitive edge</li>
+        </ul>
       </div>
 
     </div>
@@ -1050,10 +1233,10 @@
     <div class="footer-col">
       <h4>Schedule</h4>
       <ul>
+        <li><a href="#schedule">Full Schedule</a></li>
+        <li><a href="#classes">Class Descriptions</a></li>
         <li><a href="#schedule">Mon / Wed / Fri</a></li>
-        <li><a href="#schedule">Tue / Thu Evenings</a></li>
-        <li><a href="#schedule">Saturday Open Mat</a></li>
-        <li><a href="#trial">Free Week Trial</a></li>
+        <li><a href="#trial">Free Trial Week</a></li>
       </ul>
     </div>
     <div class="footer-col">
