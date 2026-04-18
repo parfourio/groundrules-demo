@@ -1,0 +1,11 @@
+{
+  "name": "groundrules-demo",
+  "version": "1.0.0",
+  "description": "Ground Rules Academy concept demo",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
